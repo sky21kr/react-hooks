@@ -1,4 +1,4 @@
-const useTitle = (initialTitle) => {
+export const useTitle = (initialTitle) => {
   const [title, setTitle] = useState(initialTitle);
   const updateTitle = () => {
     const htmlTitle = document.querySelector("title");
@@ -6,14 +6,4 @@ const useTitle = (initialTitle) => {
   };
   useEffect(updateTitle, [title]);
   return setTitle;
-};
-
-const App = () => {
-  const titleUpdater = useTitle("Loading...");
-  setTimeout(() => titleUpdater("Home"), 5000);
-  return (
-    <div className="App">
-      <div>Hi</div>
-    </div>
-  );
 };
